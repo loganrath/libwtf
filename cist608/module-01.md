@@ -7,12 +7,12 @@ module_description: >
   Please let me know if you have any questions by emailing me at lr3932@albany.edu
 readings:
   - title: Introduction Video from Logan
-    icon: circle-play
+    icon: circle-play text-success
     url: https://youtube.com/
     description: This video will introduce you to me
 
   - title: Sheppard, Chapter 3
-    icon: book
+    icon: file-pdf text-danger
     url: https://pressbooks.bccampus.ca/jibcresearchmethods/part/
     description: This is chapter 3 of her work.
 
