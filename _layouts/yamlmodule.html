@@ -70,11 +70,7 @@
       {% for reading in page.readings %}
       <div class="row">
       <div class="col-4 col-md-2">
-        {% if reading.icon %}
           <i class="fa fa-{{reading.icon}} text-primary"></i>
-        {% elsif %}
-          <i class="fa fa-pdf fa-4x text-danger"></i>
-        {% endif %}
       </div>
       <div class="col-8 col-md-10">
         <h3><a href="{{ reading.url }}" href="_blank">{{ activity.title }}</a></h3>
