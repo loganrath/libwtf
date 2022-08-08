@@ -4,23 +4,15 @@ layout: yamlmodule
 readings:
   - title: Poll Everywhere
     url: https://PollEv.com/logan9
-    description:
+    description: This is a generic poll
 
-  - title: One Note
-    url: https://brockportsuny-my.sharepoint.com/:o:/g/personal/lrath_brockport_edu/Es0l3XdRCtZInRPaja2bz6UBSjIkCUSyAYlkI93jg5gqww?e=umivjb
-    description:
-
-  - title: Research Guide for Psychology
-    url: https://library.brockport.edu/psychology
-    description:
-
-  - title: Feedback Form
-    url: https://acrl.projectoutcome.org/responses/39543
-    description:
+  - title: Sheppard, Chapter 4
+    url: https://pressbooks.bccampus.ca/jibcresearchmethods/part/chapter-4-measurement-and-units-of-analysis/
+    description: Here is where Sheppard gives an example of how to measure.
 
 activities:
-  - title: activity 1
-    description: description for activity 1
+  - title: Discussion board prompt
+    description: Complete Discussion Board \# 1
 
   - title: activity 2
     description: description for activity 2
