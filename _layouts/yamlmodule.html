@@ -67,22 +67,30 @@
   </div>
   <div class="row">
     <h2 class="text-center font-weight-bold">Read</h2>
-    <ol class="h3 font-weight-bold">
-	  {% for reading in page.readings %}
-		<li><a href="{{ reading.url }}" target="_blank">{{ reading.title }}</a>
-      <div class="font-weight-normal mb-2">{{ reading.description }}</div>
-    </li>
-	  {% endfor %}
-    </ol>
+      {% for reading in page.readings %}
+      <div class="row">
+      <div class="col-4 col-md-2">
+        {% if reading.icon %}
+          <i class="fa fa-{{reading.icon}} text-primary"></i>
+        {% elsif %}
+          <i class="fa fa-pdf fa-4x text-danger"></i>
+        {% endif %}
+      </div>
+      <div class="col-8 col-md-10">
+        <h3><a href="{{ reading.url }}" href="_blank">{{ activity.title }}</a></h3>
+        <p>{{ reading.description }}</p>
+      </div>
+      </div>
+      {% endfor %}
   </div>
   <div class="row">
     <h2 class="text-center font-weight-bold">Activities</h2>
     {% for activity in page.activities %}
     <div class="row">
-    <div class="col-4 col-md-2 col-lg-1">
-      <i class="fa fa-{{activity.icon}} text-info"></i>
+    <div class="col-4 col-md-2">
+      <i class="fa fa-{{activity.icon}} fa-4x text-info"></i>
     </div>
-    <div class="col-8 col-md-10 col-lg-11">
+    <div class="col-8 col-md-10">
       <h3>{{ activity.title }}</h3>
       <p>{{ activity.description }}</p>
     </div>
