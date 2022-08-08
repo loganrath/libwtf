@@ -49,8 +49,8 @@
   <div class="row">
   <div class="col-12 col-sm-4 col-md-3">
   <ol class="list-group list-group-numbered w-75">
-{% for nav in site.data.navigation %}
-  <li{% if navigation.url == page.url %} class="active"{% endif %}><a href="{{ navigation.url }}">{{ navigation.text }}</a></li>
+{% for module in site.data.cist608navigation %}
+  <li{% if module.url == page.url %} class="active"{% endif %}><a href="{{ module.url }}">{{ module.text }}</a></li>
 {% endfor %}
   </ol>
   </div>
