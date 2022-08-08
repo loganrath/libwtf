@@ -1,6 +1,10 @@
 ---
 title: CIST 608 Module 1
 layout: yamlmodule
+module_description: >
+  This is a starting week, so we're going to focus on introductions and learning about social science research.
+
+  Please let me know if you have any questions by emailing me at lr3932@albany.edu
 readings:
   - title: Poll Everywhere
     url: https://PollEv.com/logan9
