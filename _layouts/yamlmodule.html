@@ -14,14 +14,14 @@
     <h2>Read:</h2>
 	  {% for reading in page.readings %}
 		<p><a class="button" target="_blank" href="{{ block.url }}">{{ reading.title }}</a></p>
-    {% if reading.description % }<p>{{ reading.description }}</p> {% endif %}
+    <p>{{ reading.description }}</p>
 	  {% endfor %}
   </div>
   <div class="row">
     <h2>Activities:</h2>
     {% for activity in page.activities %}
     <h3>{{ activity.title }}</h3>
-    <p> {{ activity.description }}</p>
+    <p>{{ activity.description }}</p>
     {% endfor %}
   </div>
   {{ content }}
