@@ -50,10 +50,13 @@
   </div>
   <div class="row">
     <h2 class="text-center font-weight-bold">Read</h2>
+    <ol>
 	  {% for reading in page.readings %}
-		<p><a class="button" target="_blank" href="{{ block.url }}">{{ reading.title }}</a></p>
-    <p>{{ reading.description }}</p>
+		<li><a class="h3 font-weight-bold" href="{{ reading.url }}" target="_blank">{{ reading.title }}</a>
+      <div>{{ reading.description }}</div>
+    </li>
 	  {% endfor %}
+    </ol>
   </div>
   <div class="row">
     <h2 class="text-center font-weight-bold">Activities</h2>
