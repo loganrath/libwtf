@@ -12,8 +12,14 @@
   {% include navbar-cist608.html %}
 <div class="container">
   <div class="row">
-  <div class="col-12 col-md-8 col-lg-9">RIGHT COLUMN</div>
-  <div class="col-12 col-md-4 col-lg-3">LEFT COLUMN</div>
+  <div class="col-12 col-md-8 col-lg-9 order-last">RIGHT COLUMN</div>
+  <div class="col-12 col-md-4 col-lg-3 order-first">
+    <div class="list-group w-75 mx-auto">
+    {% for module in site.data.cist608navigation %}
+    <a href="{{ module.url }}" class="list-group-item list-group-item-action {% if module.url == page.url  %}bg-warning{% endif %}">{{ module.text }}</a>
+    {% endfor %}
+    </div>
+  </div>
 </div>
 </div>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
