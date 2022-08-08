@@ -12,7 +12,7 @@
   {% include navbar-cist608.html %}
 <div class="container">
   <div class="row">
-  <div class="col-12 col-md-8 col-lg-9 order-last">
+  <div class="col-12 col-md-8 col-lg-9 order-md-last">
     <h1 class="text-center font-weight-bold mb-4">{{ page.title}}</h1>
     <div class="alert alert-warning">
     {{ page.module_description }}
@@ -49,7 +49,7 @@
     </div>
 
   </div>
-  <div class="col-12 col-md-4 col-lg-3 order-first">
+  <div class="col-12 col-md-4 col-lg-3 order-md-first">
     <div class="list-group w-75 mx-auto">
     {% for module in site.data.cist608navigation %}
     <a href="{{ module.url }}" class="list-group-item list-group-item-action {% if module.url == page.url  %}bg-warning{% endif %}">{{ module.text }}</a>
