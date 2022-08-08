@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-5">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-primary h4 mb-5">
     <div class="container">
         <a class="navbar-brand" href="#">CIST 608 Section 9604</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
               <a class="nav-link dropdown-toggle" href="" id="cist608modules" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Modules</a>
               <div class="dropdown-menu" aria-labelledby="cist608modules">
                 {% for module in site.data.cist608navigation %}
-                <a class="dropdown" href="{{ module.url }}">{{ module.text }}</a>
+                <a class="dropdown-item" href="{{ module.url }}">{{ module.text }}</a>
                 {% endfor %}
               </div>
             </li>
