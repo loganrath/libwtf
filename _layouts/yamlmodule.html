@@ -10,6 +10,7 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-3">
+    <div class="container">
         <a class="navbar-brand" href="#">CIST 608 Section 9604</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -39,26 +40,14 @@
             </li>
           </ul>
         </div>
+        </div>
       </nav>
-
 <header class="container">
 <h1 style="text-align: center;">{{ page. title}}</h1>
 </header>
 <div class="container">
   <div class="row">
-  <div class="col-12 col-sm-4 col-md-3">
-  <ol class="list-group list-group-numbered w-75">
-    <li class="list-group-item">Module 1</li>
-    <li class="list-group-item">Module 2</li>
-    <li class="list-group-item">Module 3</li>
-    <li class="list-group-item">Module 4</li>
-    <li class="list-group-item">Module 5</li>
-    <li class="list-group-item">Module 6</li>
-    <li class="list-group-item">Module 7</li>
-    <li class="list-group-item">Module 8</li>
-  </ol>
-  </div>
-  <div class="col-12 col-sm-8 col-md-9">
+  <div class="col-12 col-sm-8 col-md-9 pull-right">
   <div class="alert alert-warning">
     {{ page.module_description }}
   </div>
@@ -90,6 +79,18 @@
     </div>
     </div>
     {% endfor %}
+  </div>
+  <div class="col-12 col-sm-4 col-md-3 pull-left">
+  <ol class="list-group list-group-numbered w-75">
+    <li class="list-group-item">Module 1</li>
+    <li class="list-group-item">Module 2</li>
+    <li class="list-group-item">Module 3</li>
+    <li class="list-group-item">Module 4</li>
+    <li class="list-group-item">Module 5</li>
+    <li class="list-group-item">Module 6</li>
+    <li class="list-group-item">Module 7</li>
+    <li class="list-group-item">Module 8</li>
+  </ol>
   </div>
 </div>
 </div>
