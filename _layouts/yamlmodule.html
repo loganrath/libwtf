@@ -77,8 +77,16 @@
   <div class="row">
     <h2 class="text-center font-weight-bold">Activities</h2>
     {% for activity in page.activities %}
-    <h3>{{ activity.title }}</h3>
-    <p>{{ activity.description }}</p>
+    <div class="row">
+    <div class="col-4 col-md-2 col-lg-1">
+      <i class="fa fa-{{activity.icon}} text-info"></i>
+    </div>
+    <div class="col-8 col-md-10 col-lg-11">
+      <h3>{{ activity.title }}</h3>
+      <p>{{ activity.description }}</p>
+    </div>
+    </div>
+    </div>
     {% endfor %}
   </div>
 </div>
