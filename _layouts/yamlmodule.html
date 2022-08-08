@@ -50,7 +50,7 @@
   <div class="col-12 col-sm-4 col-md-3">
   <ol class="list-group list-group-numbered w-75">
 {% for module in site.data.cist608navigation %}
-  <li{% if module.url == "page.url | prepend "cist608/" %} class="active list-item"{% endif %}><a href="{{ module.url }}" class="list-item">{{ module.text }}</a></li>
+  <li{% if module.url == "page.url | prepend "cist608/" %} class="active list-group-item list-group-item-action"{% endif %}><a href="{{ module.url }}" class="list-group-item list-group-item-action">{{ module.text }}</a></li>
 {% endfor %}
   </ol>
   </div>
