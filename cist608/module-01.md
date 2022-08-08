@@ -7,9 +7,9 @@ module_description: >
   Please let me know if you have any questions by emailing me at lr3932@albany.edu
 readings:
 - title: Introduction Video from Logan
-  icon: circle-play text-success
+  icon: circle-play
   url: https://youtube.com/
-  description: This video will introduce you to me.
+  description: This video will introduce you to me
 
 - title: Sheppard, Chapter 3
   icon: book
