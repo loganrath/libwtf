@@ -33,6 +33,20 @@
       {% endfor %}
     </div>
 
+    <div class="row">
+    <h2 class="text-center font-weight-bold">Activities</h2>
+    {% for activity in page.activities %}
+    <div class="row my-3">
+    <div class="col-4 col-md-2 text-center">
+      <i class="fa fa-{{activity.icon}} fa-4x text-info"></i>
+    </div>
+    <div class="col-8 col-md-10">
+      <h3>{{ activity.title }}</h3>
+      <p>{{ activity.description }}</p>
+    </div>
+    </div>
+    {% endfor %}
+    </div>
 
   </div>
   <div class="col-12 col-md-4 col-lg-3 order-first">
