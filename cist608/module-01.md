@@ -1,10 +1,12 @@
 ---
-title: CIST 608 Module 1
 layout: yamlmodule
+title: Module 1
+
 module_description: >
   This is a starting week, so we're going to focus on introductions and learning about social science research.
 
-  Please let me know if you have any questions by emailing me at lr3932@albany.edu
+  Please let me know if you have any questions by emailing me at <a href="mailto:#">lr3932@albany.edu</a>
+
 readings:
   - title: Introduction Video from Logan
     icon: circle-play text-success
@@ -30,4 +32,3 @@ activities:
     description: description for activity 2
 
 ---
-Test
