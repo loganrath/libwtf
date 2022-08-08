@@ -14,7 +14,7 @@
     <h2>Read:</h2>
 	  {% for reading in page.readings %}
 		<p><a class="button" target="_blank" href="{{ block.url }}">{{ reading.title }}</a></p>
-    {% if reading.description }<p>{{ reading.description }}</p> {% endif %}
+    {% if reading.description % }<p>{{ reading.description }}</p> {% end if %}
 	  {% endfor %}
   </div>
   <div class="row">
