@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 	<!DOCTYPE html>
@@ -19,15 +19,17 @@
         <div class="collapse navbar-collapse" id="navbarsExample03">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/cist608/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="/608/" id="cist608modules" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Modules</a>
+              <a class="nav-link dropdown-toggle" href="" id="cist608modules" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Modules</a>
               <div class="dropdown-menu" aria-labelledby="cist608modules">
-                <a class="dropdown-menu" href="module-01">Module 01</a>
+                {% for module in site.data.cist608navigation %}
+                <a class="dropdown" href="{{ module.url }}">{{ module.text }}</a>
+                {% endfor %}
               </div>
             </li>
             <li class="nav-item dropdown">
