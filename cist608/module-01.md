@@ -7,7 +7,7 @@ module_description: >
   Please let me know if you have any questions by emailing me at lr3932@albany.edu
 readings:
   - title: Poll Everywhere
-    icon: pdf
+    icon: file-pdf
     url: https://PollEv.com/logan9
     description: This is a generic poll
 
