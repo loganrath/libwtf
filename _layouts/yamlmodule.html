@@ -13,13 +13,6 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-sm-8 col-md-9">
-  <div class="list-group w-75 mx-auto">
-  {% for module in site.data.cist608navigation %}
-  <a href="{{ module.url }}" class="list-group-item list-group-item-action {% if module.url == page.url  %}bg-warning{% endif %}">{{ module.text }}</a>
-  {% endfor %}
-  </div>
-    </div>
-    <div class="col-12 col-sm-4 col-md-3">
       <h1 class="text-center font-weight-bold mb-4">{{ page.title}}</h1>
     <div class="alert alert-warning">
       {{ page.module_description }}
@@ -52,6 +45,14 @@
       </div>
       </div>
       {% endfor %}
+    </div>
+    <div class="col-12 col-sm-4 col-md-3">
+
+      <div class="list-group w-75 mx-auto">
+      {% for module in site.data.cist608navigation %}
+      <a href="{{ module.url }}" class="list-group-item list-group-item-action {% if module.url == page.url  %}bg-warning{% endif %}">{{ module.text }}</a>
+      {% endfor %}
+      </div>
     </div>
 </div>
 </div>
