@@ -1,0 +1,42 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+{% assign categories_max = 0 %}
+{% for category in site.categories %}
+  {% if category[1].size > categories_max %}
+    {% assign categories_max = category[1].size %}
+  {% endif %}
+{% endfor %}
+
+<div class="taxonomy__index filters">
+  {% for i in (1..categories_max) reversed %}
+    {% for category in site.categories %}
+      {% if category[1].size == i %}
+        <a href="#{{ category[0] | slugify }}" class="chip chip-lg scroll-to-link">
+          {{ category[0] }}
+          <figure class="avatar avatar-right bg-dark" data-initial="{{ i }}"></figure>
+        </a>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</div>
+
+{% assign items_layout = page.items_layout | default: 'list' %}
+{% for i in (1..categories_max) reversed %}
+  {% for category in site.categories %}
+    {% if category[1].size == i %}
+      <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section">
+        <h2 class="archive__subtitle"><i class="las la-folder-open" aria-hidden="true"></i> {{ category[0] }}</h2>
+        <div class="items-{{ items_layout }} {% if items_layout == 'grid' %}columns{% endif %}">
+          {% for post in category.last %}
+            {% include archive-single.html type=items_layout %}
+          {% endfor %}
+        </div>
+        {% include back-to-top.html %}
+      </section>
+    {% endif %}
+  {% endfor %}
+{% endfor %}

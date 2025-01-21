@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+  Quarkyll Jekyll Theme 0.1.0 by drupix
+  Copyright 2020-2021 Enzo Di Resta - drupal-solutions.ch | @drupix
+  Free for personal and commercial use under the MIT license
+  https://github.com/drupix/jekyll-theme-quarkyll/blob/master/LICENSE.txt
+-->
+<html lang="{{ page.lang | default: site.locale | slice: 0,2 | default: "en" }}">
+<head>
+    {% include head.html %}
+</head>
+<body id="top" class="{{ page.classes | default: "" }} {% if page.showcase %}showcase{% endif %} {{ site.theme_options | join: " " }}">
+  <div id="page-wrapper">
+    {%- include header.html -%}
+    {%- if page.showcase -%}
+        {%- if page.showcase.video -%}
+            {%- include showcase_video.html -%}
+        {%- else -%}
+            {%- include showcase.html -%}
+        {%- endif -%}
+    {%- endif -%}
+    <section id="start">
+      <section {% if page.showcase == "" or page.showcase == nil %}id="body-wrapper"{% endif %} class="section home-content offset-box">
+        <section class="container {{ site.grid-size | default: "grid-lg" }}">
+          <div class="frame-box">
+            {%- assign content_size = 'col-12' -%}
+            {%- assign content_size = '' -%}
+            {%- assign show_sidebar = false -%}
+
+            {%- if show_sidebar and page.sidebar_first != null and page.sidebar_second != null -%}
+              {%- assign content_size = 'col-6' -%}
+            {%- elsif show_sidebar and page.sidebar_first != null -%}
+              {%- assign content_size = 'col-9' -%}
+            {%- elsif show_sidebar and page.sidebar_second != null -%}
+              {%- assign content_size = 'col-9' -%}
+            {%- endif -%}
+
+            {%- if show_sidebar and page.sidebar_first != null -%}
+              <div id="sidebar-first-region">
+                {%- assign side = 'first' -%}
+                {% include sidebar.html side=side %}
+              </div>
+            {%- endif -%}
+            <div id="content-region" class="{{ content_size }} {% if page.hide_title %}title-hidden{% endif %}">
+              {%- if page.hide_title != true -%}
+                <h1 class="page-title {% if page.subtitle == nil %} no-subtitle{% endif %}">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+              {%- endif -%}
+              {% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
+
+              {%- if page.layout == 'home' -%}
+                {{ content }}
+                {%- include features.html -%}
+              {%- else -%}
+                {{ content }}
+              {%- endif -%}
+            </div>
+            {%- if show_sidebar and page.sidebar_second != null -%}
+              <div id="sidebar-second-region">
+                {%- assign side = 'second' -%}
+                {% include sidebar.html side=side %}
+              </div>
+            {%- endif -%}
+          </div>
+        </section>
+      </section>
+    </section>
+    {%- if page.id and page.related -%}
+      {%- include section-related.html -%}
+    {%- endif -%}
+  </div>
+
+  {% include pre-footer.html %}
+  {% include footer.html %}
+
+  <div class="mobile-container">
+    <div class="overlay" id="overlay">
+      <div class="mobile-logo">
+        {% include logo.html %}
+      </div>
+      <nav class="overlay-menu">
+        {%- if site.data.menus and site.data.menus.header -%}
+          {%- assign menu = site.data.menus.header | sort: 'weight' -%}
+        {%- endif -%}
+        {%- assign menu_class = 'main-menu' -%}
+        {%- assign tree = true -%}
+        {% include menus.html %}
+      </nav>
+    </div>
+  </div>
+
+  <script src="{{ "/assets/js/quarkyll-bootstrap.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/plugins/jquery.treemenu.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/plugins/jquery.fancybox.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/quark.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/quarkyll.js" | relative_url }}"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% if include.id %}
+  {% assign gallery = page[include.id] %}
+  {% assign data_fancybox_id = "gallery" | append: include.id %}
+{% else %}
+  {% assign gallery = page.gallery %}
+  {% assign data_fancybox_id = "gallery" %}
+{% endif %}
+
+{% if include.layout %}
+  {% assign gallery_layout = include.layout %}
+{% else %}
+  {% if gallery.size == 2 %}
+    {% assign gallery_layout = 'half' %}
+  {% elsif gallery.size >= 3 %}
+    {% assign gallery_layout = 'third' %}
+  {% else %}
+    {% assign gallery_layout = '' %}
+  {% endif %}
+{% endif %}
+
+{% comment %} <figure class="figure gallery {{ gallery_layout }} {{ include.class }}"> {% endcomment %}
+<figure class="figure gallery {{ gallery_layout }} {% if include.magnific %}magnific{% endif  %}">
+  {% for img in gallery %}
+    {% if img.url %}
+      <a href="{{ img.url | relative_url }}"
+        data-fancybox="{{ data_fancybox_id }}"
+        data-caption="{{ img.title }}"
+        {% if img.title %}title="{{ img.title | strip_html }}"{% endif %}>
+          <img src="{{ img.image_path | relative_url }}"
+            alt="{% if img.alt %}{{ img.alt }}{% endif %}">
+      </a>
+    {% else %}
+      <img src="{{ img.image_path | relative_url }}"
+        alt="{% if img.alt %}{{ img.alt }}{% endif %}">
+    {% endif %}
+  {% endfor %}
+  {% if include.caption %}
+    <figcaption class="figure-caption">{{ include.caption | markdownify | remove: "<p>" | remove: "</p>" }}</figcaption>
+  {% endif %}
+</figure>

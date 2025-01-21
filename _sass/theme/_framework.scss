@@ -1,0 +1,37 @@
+section.section {
+  &.hero-video {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.overlay-custom {
+  z-index: 0;
+}
+
+#content-region {
+  &.title-hidden {
+    margin-top: 2rem;
+  }
+}
+
+// Hero
+.hero {
+  .header-fixed & {
+    background-position: 50% 50%;
+  }
+}
+.hero.text-small,
+.text-small.hero {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+.hero-video {
+  padding-top: 4rem;
+  padding-bottom: 0;
+}

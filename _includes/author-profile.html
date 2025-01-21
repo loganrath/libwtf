@@ -1,0 +1,43 @@
+{% assign author = page.author | default: page.authors[0] | default: site.author %}
+{% assign author = site.data.authors[author] | default: author %}
+
+<div class="author-profile columns" itemscope itemtype="https://schema.org/Person">
+
+  {% if author.avatar %}
+    <div class="author__avatar column col-12 col-lg-auto">
+      {% if author.home %}
+        <a href="{{ author.home | relative_url }}">
+          <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image">
+        </a>
+      {% else %}
+        <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image">
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="author__content column col-12 col-lg-auto">
+    {% if author.home %}
+      <a href="{{ author.home | relative_url }}"><h3 class="author__name" itemprop="name">{{ author.name }}</h3></a>
+    {% else %}
+      <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
+    {% endif %}
+    {% if author.bio %}
+      <div class="author__bio" itemprop="description">
+        {{ author.bio | markdownify }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="author__urls-wrapper column col-12 col-lg-auto">
+    <div class="dropdown urls-wrapper">
+      <a href="#" class="btn btn-inverse dropdown-toggle" tabindex="0">
+        {{ site.data.ui-text[site.locale].follow_label | remove: ":" | default: "Follow" }} <!--<i class="icon icon-caret"></i>-->
+      </a>
+      {% include author-profile-author-urls.html type='menu' %}
+    </div>
+
+    <div class="urls-wrapper">
+      {% include author-profile-author-urls.html %}
+    </div>
+  </div>
+</div>

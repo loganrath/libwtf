@@ -1,0 +1,19 @@
+{%- if site.data.features -%}
+    <div class="columns features">
+        {%- assign features = site.data.features -%}
+        {%- for feature in features -%}
+            {%- assign key = feature | first -%}
+            {%- if features[key].title -%}
+                <div class="column col-4 col-md-6 col-sm-12">
+                    <div class="feature-icon">
+                        <i class="{{ features[key].icon }}"></i>
+                        <h6>{{ features[key].title }}</h6>
+                    </div>
+                    <div class="feature-content">
+                        <p>{{ features[key].description }}</p>
+                    </div>
+                </div>
+            {%- endif -%}
+        {%- endfor -%}
+    </div>
+{%- endif -%}

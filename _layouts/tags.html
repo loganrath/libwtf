@@ -1,0 +1,42 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+{% assign tags_max = 0 %}
+{% for tag in site.tags %}
+  {% if tag[1].size > tags_max %}
+    {% assign tags_max = tag[1].size %}
+  {% endif %}
+{% endfor %}
+
+<div class="taxonomy__index filters">
+  {% for i in (1..tags_max) reversed %}
+    {% for tag in site.tags %}
+      {% if tag[1].size == i %}
+        <a href="#{{ tag[0] | slugify }}" class="chip chip-lg scroll-to-link">
+          {{ tag[0] }}
+          <figure class="avatar avatar-right bg-dark" data-initial="{{ i }}"></figure>
+        </a>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</div>
+
+{% assign items_layout = page.items_layout | default: 'list' %}
+{% for i in (1..tags_max) reversed %}
+  {% for tag in site.tags %}
+    {% if tag[1].size == i %}
+      <section id="{{ tag[0] | slugify | downcase }}" class="taxonomy__section">
+        <h2 class="archive__subtitle"><i class="las la-tag" aria-hidden="true"></i> {{ tag[0] }}</h2>
+        <div class="items-{{ items_layout }} {% if items_layout == 'grid' %}columns{% endif %}">
+          {% for post in tag.last %}
+            {% include archive-single.html type=items_layout %}
+          {% endfor %}
+        </div>
+        {% include back-to-top.html %}
+      </section>
+    {% endif %}
+  {% endfor %}
+{% endfor %}

@@ -1,0 +1,32 @@
+.btn {
+
+  &.btn-light {
+    @include theme-button-variant($btn-light-color, $btn-light-bg-color);
+  }
+
+  &.btn-info {
+    @include theme-button-variant($btn-color, $btn-info-bg-color);
+  }
+
+  &.btn-warning {
+    @include theme-button-variant($btn-color, $btn-warning-bg-color);
+  }
+
+  &.btn-danger {
+    @include theme-button-variant($btn-color, $btn-danger-bg-color);
+  }
+
+  &.btn-inverse {
+    @include theme-button-variant($btn-color, $btn-inverse-bg-color);
+  }
+
+  &.btn--facebook {
+    @include theme-button-variant($btn-color, #3b5998);
+  }
+  &.btn--linkedin {
+    @include theme-button-variant($btn-color, #007bb6);
+  }
+  &.btn--twitter {
+    @include theme-button-variant($btn-color, #55acee);
+  }
+}

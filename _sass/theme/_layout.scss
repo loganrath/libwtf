@@ -1,0 +1,61 @@
+// // Add more columns spacing here
+// [class~="col-"],
+// .column {
+//   padding-left: $horiz-padding;
+//   padding-right: $horiz-padding;
+// }
+
+.container-wide {
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.page__meta {
+  padding-top: 1.2rem;
+  &.grid {
+    .page__meta--item {
+      display: block;
+    }
+  }
+}
+.page__meta-sep::before {
+  content: "\2022";
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.page__share {
+  padding-bottom: 2rem;
+}
+
+// #related_content {
+//   background: lighten($dark-color, 10%);
+//   .page__related-title {
+//     //color: $light-color;
+//   }
+//   //color: orangered;
+// }
+
+.archive__item {
+  position: relative;
+  a {
+    position: relative;
+    z-index: 10;
+  }
+  .archive__item-title {
+    a[rel="permalink"] {
+      position: static;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.taxonomy__section {
+  padding-top: 1.4em;
+}

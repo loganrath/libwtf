@@ -1,0 +1,26 @@
+<section id="header" class="section">
+  <section class="container {{ site.header-grid-size }}">
+    <nav class="navbar">
+      <section class="navbar-section logo">
+        {%- include logo.html -%}
+      </section>
+      <section class="navbar-section main-menu">
+        <nav class="dropmenu animated">
+          {%- if site.data.menus and site.data.menus.header -%}
+            {%- assign menu = site.data.menus.header | sort: 'weight' -%}
+          {%- endif -%}
+          {%- assign menu_class = 'main-menu' -%}
+          {%- include menus.html -%}
+        </nav>
+      </section>
+    </nav>
+  </section>
+</section>
+
+<div class="mobile-menu">
+  <div class="button_container" id="toggle">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="bottom"></span>
+  </div>
+</div>

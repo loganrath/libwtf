@@ -1,0 +1,161 @@
+// h1.page-title {
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+// }
+
+.title-h1h2 {
+  h1.no-subtitle  {
+    margin-bottom: 50px;
+  }
+  .page__content,
+  .archive__content {
+    h1, h2 {
+      font-weight: 500;
+      margin-bottom: .5em;
+      line-height: 1.2;
+      text-align: left;
+    }
+  }
+}
+
+img {
+  &.float-left {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  &.float-right {
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Notices
+.notices {
+  padding: 1px 30px;
+  border-left: 10px solid $gray-color;
+  background: $gray-color-light;
+
+  a {
+    text-decoration: underline;
+    &:focus,
+    &:hover,
+    &:active,
+    &.active {
+      color: $link-color-dark;
+    }
+  }
+
+  &.info {
+    border-left: 10px solid #5bc0de;
+    background: lighten(#5bc0de, 30%);
+  }
+
+  &.warning {
+    border-left: 10px solid $warning-color;
+    background: lighten($warning-color, 40%);
+    a {
+      color: darken($warning-color, 10%);
+      &:focus,
+      &:hover,
+      &:active,
+      &.active {
+        color: darken($warning-color, 20%);
+      }
+    }
+  }
+
+  &.error,
+  &.danger {
+    border-left: 10px solid $error-color;
+    background: lighten($error-color, 45%);
+    a {
+      color: $error-color;
+      &:focus,
+      &:hover,
+      &:active,
+      &.active {
+        color: darken($error-color, 10%);
+      }
+    }
+  }
+
+  &.success {
+    border-left: 10px solid $success-color;
+    background: lighten($success-color, 45%);
+    a {
+      color: darken($success-color, 10%);
+      &:focus,
+      &:hover,
+      &:active,
+      &.active {
+        color: darken($success-color, 20%);
+      }
+    }
+  }
+
+  & > h1, & > h2,
+  & > h3, & > h4,
+  & > h5, & > h6 {
+    margin-top: 1rem;
+  }
+}
+p.notices {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Dropcaps */
+.dropcap {
+  //color: #555555;
+  display: block;
+  float: left;
+  font-size: 3em;
+  line-height: 1;
+  padding: 0;
+  margin: 0 8px 0 0;
+  text-transform: uppercase;
+}
+
+.back-to-top {
+  margin: 1rem 0;
+  .to-top {
+    color: $link-color;
+    padding: 0.2rem 0;
+
+    &:focus {
+      @include control-shadow();
+    }
+
+    &:focus,
+    &:hover {
+      cursor: pointer;
+      color: $link-color-dark;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Icon Tweaks
+i.la,
+i.las,
+i.lab {
+  &.la-heart, &.la-heart-o {
+    &.pulse {
+      color: #920000
+    }
+  }
+  &.red {
+    color: #920000
+  }
+  &.green {
+    color: #55a630
+  }
+  &.blue {
+    color: #00509d
+  }
+  &.yellow {
+    color: #FFBA08
+  }
+}

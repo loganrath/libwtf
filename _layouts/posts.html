@@ -1,0 +1,30 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+<div class="taxonomy__index filters">
+  {% assign postsInYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+  {% for year in postsInYear %}
+    <a href="#year-{{ year.name }}" class="chip chip-lg scroll-to-link">
+      {{ year.name }}
+      <figure class="avatar avatar-right bg-dark" data-initial="{{ year.items | size }}"></figure>
+    </a>
+  {% endfor %}
+</div>
+
+{% assign items_layout = page.items_layout | default: 'list' %}
+{% assign postsByYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+
+{% for year in postsByYear %}
+  <section id="year-{{ year.name }}" class="taxonomy__section">
+    <h2 class="archive__subtitle">{{ year.name }}</h2>
+    <div class="items-{{ items_layout }} {% if items_layout == 'grid' %}columns{% endif %}">
+      {% for post in year.items %}
+        {% include archive-single.html type=items_layout %}
+      {% endfor %}
+    </div>
+    {% include back-to-top.html %}
+  </section>
+{% endfor %}

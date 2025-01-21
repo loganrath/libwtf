@@ -1,0 +1,48 @@
+{% comment %} {% assign nav_title = 'Moth Fu...' -%} {% endcomment %}
+
+{% comment %} <p>Sidebar side: {{ side }}</p> {% endcomment %}
+
+{%- if side == 'first' and page.sidebar_first.nav %}
+  {% assign navigation = site.data.menus[page.sidebar_first.nav] -%}
+  {% assign nav_class = page.sidebar_first.nav -%}
+  {% assign nav_title = page.sidebar_first.title -%}
+{%- elsif side == 'second' and page.sidebar_second.nav %}
+  {% assign navigation = site.data.menus[page.sidebar_second.nav] -%}
+  {% assign nav_class = page.sidebar_second.nav -%}
+  {% assign nav_title = page.sidebar_second.title -%}
+{%- elsif side and page.sidebar_first or page.sidebar_second %}
+  <!--{% comment %} Sidebar first nav: {{ page.sidebar_first }}
+  Sidebar second nav: {{ page.sidebar_second }} {% endcomment %}-->
+  {% assign sidebar = page.sidebar_first -%}
+  {% if sidebar == nil %}
+    {% assign sidebar = page.sidebar_second -%}
+  {%- endif -%}
+  {% assign nav_class = 'custom' -%}
+  <!--{% comment %} Sidebar : {{ sidebar }} {% endcomment %}-->
+{%- endif -%}
+
+{% if navigation %}
+  {% include nav_list nav=navigation %}
+{% elsif page.author_profile or layout.author_profile or sidebar %}
+  <div class="sidebar-sticky">
+    {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
+    {% if sidebar %}
+      {% for s in sidebar %}
+        {% if s.image %}
+          <img src="{{ s.image | relative_url }}"
+              class="img-responsive"
+              alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
+        {% endif %}
+        {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
+        {% if s.text %}{{ s.text | markdownify }}{% endif %}
+        {% if s.nav %}
+          {% assign navigation = site.data.menus[s.nav] -%}
+          {% include nav_list nav=navigation %}
+        {% endif %}
+      {% endfor %}
+      {% if sidebar.nav %}
+        {% include nav_list nav=sidebar.nav %}
+      {% endif %}
+    {% endif %}
+  </div>
+{% endif %}

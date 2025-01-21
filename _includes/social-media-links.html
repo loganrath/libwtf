@@ -1,0 +1,13 @@
+{% if site.social_media.links %}
+<ul class="social-media-list">
+  {% for link in site.social_media.links %}
+    {% if link.url %}
+      <li>
+        <a target="_blank" href="{{ link.url }}" title="{{ link.title }}" rel="nofollow noopener noreferrer">
+          <i class="{{ link.icon | default: 'las la-link' }}" aria-hidden="true"></i>
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{% endif %}
